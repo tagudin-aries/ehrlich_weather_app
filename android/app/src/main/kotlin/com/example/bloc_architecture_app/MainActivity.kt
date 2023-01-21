@@ -1,4 +1,4 @@
-package com.example.bloc_architecture_app
+package com.tagudin.weatherapp
 
 import io.flutter.embedding.android.FlutterActivity
 
