@@ -1,28 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
 import 'core/constants/strings.dart';
 import 'core/themes/app_theme.dart';
+import 'data/repositories/user_repository.dart';
+import 'logic/bloc/login/login_bloc.dart';
 import 'logic/cubit/onboarding/onboarding_cubit.dart';
 import 'logic/debug/app_bloc_observer.dart';
 import 'presentation/router/app_router.dart';
 
 void main() async {
   Bloc.observer = AppBlocObserver();
+  await dotenv.load();
   runApp(App());
 }
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return MultiRepositoryProvider(
       providers: [
-        BlocProvider(
-          create: (_) => OnBoardingCubit(),
+        RepositoryProvider(
+          create: (context) => UserRepository(),
         ),
       ],
-      child: weatherApp(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => OnBoardingCubit(),
+          ),
+          BlocProvider(
+            create: (ctx) =>
+                LoginBloc(RepositoryProvider.of<UserRepository>(ctx)),
+          ),
+        ],
+        child: weatherApp(),
+      ),
     );
   }
 
@@ -40,7 +54,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: Strings.appTitle,
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+      // darkTheme: AppTheme.darkTheme,
       debugShowCheckedModeBanner: false,
       initialRoute: AppRouter.initialRoute,
       onGenerateRoute: AppRouter.onGenerateRoute,

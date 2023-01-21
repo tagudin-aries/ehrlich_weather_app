@@ -1,5 +1,5 @@
-name: bloc_architecture_app
-description: A Flutetr Bloc Architecture project.
+name: weather_wise_app
+description: Weather Forecast.
 
 publish_to: "none"
 
@@ -20,6 +20,11 @@ dependencies:
   equatable: ^2.0.5
   flutter_easyloading: ^3.0.5
   page_transition: ^2.0.9
+  auth0_flutter: ^1.0.2
+  flutter_dotenv: ^5.0.2
+  google_fonts: ^3.0.1
+  cool_alert: ^1.1.0
+  weather_icons: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +35,7 @@ flutter:
 
   assets:
     - lib/assets/images/onboarding/
+    - lib/assets/images/welcome/
+    - lib/assets/images/shared/
+    - lib/assets/images/logos/
+    - .env
