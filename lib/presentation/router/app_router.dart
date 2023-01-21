@@ -1,8 +1,9 @@
-import 'package:bloc_architecture_app/presentation/screens/onboarding_screen/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../core/exceptions/route_exception.dart';
+import '../screens/onboarding_screen/on_boarding_screen.dart';
+import '../screens/welcome_screen/welcome_screen.dart';
 
 class AppRouter {
   static const initialRoute = OnBoardingScreen.routeName;
@@ -15,6 +16,10 @@ class AppRouter {
         return PageTransition(
             type: PageTransitionType.bottomToTop,
             child: const OnBoardingScreen());
+
+      case WelcomeScreen.routeName:
+        return PageTransition(
+            type: PageTransitionType.bottomToTop, child: const WelcomeScreen());
 
       default:
         throw const RouteException('Route not found!');

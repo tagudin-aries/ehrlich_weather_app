@@ -1,4 +1,3 @@
-import 'package:bloc_architecture_app/presentation/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
@@ -7,6 +6,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/themes/defaults.dart';
 import '../../../data/models/objects/onboarding.dart';
 import '../../../logic/cubit/onboarding/onboarding_cubit.dart';
+import '../welcome_screen/welcome_screen.dart';
 import 'widgets/onboarding_container.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -21,7 +21,7 @@ class OnBoardingScreen extends StatelessWidget {
         title: 'Github Auth',
         subtitle: 'Use your Github accounts to access contents',
         counterText: '1 of 2',
-        bgColor: ThemeDefaults.tWhiteColor,
+        bgColor: Color(0xFFB8E7FB),
       ),
     ),
     OnBoardingContainer(
@@ -30,11 +30,12 @@ class OnBoardingScreen extends StatelessWidget {
         title: 'Weather Forecast',
         subtitle: 'Get weather forecast for your location',
         counterText: '2 of 2',
-        bgColor: ThemeDefaults.tLigthGreenShade,
+        bgColor: Color(0xFFA8E1FA),
       ),
     )
   ];
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -58,7 +59,8 @@ class OnBoardingScreen extends StatelessWidget {
                 onPressed: () => state.currentPage != 1
                     ? BlocProvider.of<OnBoardingCubit>(context)
                         .animateToNextSlide()
-                    : Navigator.pushNamed(context, WelcomeScreen.routeName),
+                    : Navigator.pushReplacementNamed(
+                        context, WelcomeScreen.routeName),
                 style: ElevatedButton.styleFrom(
                   side: const BorderSide(color: Colors.black26),
                   shape: const CircleBorder(),
@@ -67,7 +69,7 @@ class OnBoardingScreen extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
-                      color: ThemeDefaults.tDarkColor, shape: BoxShape.circle),
+                      color: Colors.black, shape: BoxShape.circle),
                   child: Icon(state.currentPage == 1
                       ? Icons.cloud
                       : Icons.arrow_forward_ios),
