@@ -1,22 +1,29 @@
-<b><h2> BLoC Architecture Startup Project </h2> </b>
+<b><h2> WeatherWise - EHRLICH 24HOURS CHALLENGE </h2> </b>
 
-Hello everyone and welcome back! 
+<b><h2> About the structure of the project </h2></b>
 
-This repo is going to serve as a starting project for every application I will build on my <b> BLoC - From Hero to Wizard </b> Tutorial Series on my <b> [Flutterly YouTube Channel](https://youtube.com/c/Flutterly)  </b>
+- <b> 🔹 FVM is used for handling flutter versions - https://fvm.app/</b>
+- <b> 🔹 BLoC for State Management </b>
+- <b> 🔹 Base code is from BLoC - From Hero to Wizard Tutorial Series by Flutterly YouTube Channel</b>
+- <b> 🔹 Visual Studio Code Extensions </b>
+  <br/> Awesome Flutter Snippets - neevash Ramdial
+  <br/> bloc - Felix Angelov
+  <br/> Bracket Pair Colorizer - CoenraadS
+  <br/> Dart - Dart Code
+  <br/> Dart Data Class Generator - BendixMa
+  <br/> dart-import - Luan
+  <br/> Flutter - Dart Code
+  <br/> Pretier - Code formatter - Prettier
+  <br/> Pubspec Assis - Jeroen Meijer
+- <b> 🔹 Integrations</b>
+  <br/> <b> 🔹 Auth0 - Github signin</b>
+  <br/> <b> 🔹 openweathermap </b>
 
-<b><h2>  About the structure of the project </h2></b> 
-
-This main startup project will contain everything you'll need in order to immediately start developing your bloc-driven application. 
-
-<b> Here's some advantages: </b>
-
-- <b> 🔹 [Pure Startup project](https://i.imgur.com/S9UIgQ4.png) </b>
-- <b> 🔹 [Organised Folder Structure](https://i.imgur.com/6jPVHx5.png)  </b>
-- <b> 🔹 [Required BLoC Dependencies](https://i.imgur.com/abBEVCj.png) </b>
-- <b> 🔹 Generated Routing </b>
-- 🔹🔹🔹 <b> More to be added soon... </b>
-
-You might notice that some files are just dummy (like api.dart, model.dart). 
-They are placed there just for git to take the folder structure into consideration. 
-Leaving those folders empty won't let git to take them into consideration. Since this is mostly a startup project, I was thinking of offering you the standard folder structure from the start. Of course, this may change multiple times, improving every time more and more.
-
+<b><h2> To Run the Project </h2></b>
+<br/> <b> 🔹 Clone this Repository </b>
+<br/> <b> 🔹 Checkout dev branch </b>
+<br/> <b> 🔹 Enable fvm by running this cmd `fvm use insert_flutter_version` </b>
+<br/> <b> 🔹 Run `fvm doctor` to check if fvm is correctly configured</b>
+<br/> <b> 🔹 Run `fvm flutter pub get` to get packages</b>
+<br/> <b> 🔹 Configure `.env` file for the credentials of Auth0 & opnweathermap. .env file is currently uploaded here for the sake of code checking</b>
+<br/> <b> 🔹 Run `fvm flutter run` to run the application </b>

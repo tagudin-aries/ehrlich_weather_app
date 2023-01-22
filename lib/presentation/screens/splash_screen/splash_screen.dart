@@ -29,9 +29,9 @@ class _SplashScreenState extends State<SplashScreen> {
       if (hasSession) {
         context.read<SessionCubit>().fetchSession();
       }
-
-      Navigator.of(context).pushReplacementNamed(
-          hasSession ? HomeScreen.routeName : OnBoardingScreen.routeName);
+      Future.delayed(Duration(seconds: 2)).then((value) => Navigator.of(context)
+          .pushReplacementNamed(
+              hasSession ? HomeScreen.routeName : OnBoardingScreen.routeName));
     });
   }
 

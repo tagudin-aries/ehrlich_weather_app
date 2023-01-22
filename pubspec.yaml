@@ -26,6 +26,7 @@ dependencies:
   cool_alert: ^1.1.0
   weather_icons: ^3.0.0
   shared_preferences: ^2.0.17
+  flutter_launcher_icons: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -40,3 +41,8 @@ flutter:
     - lib/assets/images/shared/
     - lib/assets/images/logos/
     - .env
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "lib/assets/images/logos/logo.png"
