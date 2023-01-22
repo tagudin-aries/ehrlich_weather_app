@@ -3,6 +3,9 @@ class Strings {
   static final appTitle = 'WeatherWise';
 
   // HomeScreen
-  static final homeScreenTitle = 'Home Screen';
-  static final homeScreenCenterText = 'Welcome to Flutterly!';
+  static final homeGreeting = " Hey, let's see what's the weather today";
+  static final homeExploreCities = 'Explore Cities';
+  static final homeSearchText = 'Search';
+  static final homeCityNotFoundText = ' City not found in the Philippines';
+  static final homeWeatherListHeader = ' Weather in the Philippines';
 }
