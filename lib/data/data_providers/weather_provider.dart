@@ -23,8 +23,6 @@ class WeatherProvider {
       return null;
     }
 
-    print(response.body);
-
     return compute(parseWeatherResponse, response.body);
   }
 }
