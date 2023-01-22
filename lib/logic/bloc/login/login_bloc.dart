@@ -23,9 +23,25 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         emit(LoginFailed());
       }
     });
+
+    on<LogoutEvent>((event, emit) {
+      print("yes");
+      doLogout();
+      emit(const LogoutSubmitted());
+    });
+
+    on<LogoutDoneEvent>((event, emit) {
+      emit(LogoutSuccess());
+    });
   }
 
   void doSignIn() async {
     add(LoginDoneEvent(await repo.login()));
+  }
+
+  void doLogout() async {
+    await repo.logout().then((_) {
+      add(LogoutDoneEvent());
+    });
   }
 }

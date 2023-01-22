@@ -19,3 +19,17 @@ class LoginDoneEvent extends LoginEvent {
   @override
   List<Object> get props => [response];
 }
+
+class LogoutEvent extends LoginEvent {
+  const LogoutEvent();
+
+  @override
+  List<Object> get props => [];
+}
+
+class LogoutDoneEvent extends LoginEvent {
+  const LogoutDoneEvent();
+
+  @override
+  List<Object> get props => [];
+}

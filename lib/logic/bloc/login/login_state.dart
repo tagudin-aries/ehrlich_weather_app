@@ -29,3 +29,21 @@ class LoginFailed extends LoginState {
   @override
   List<Object?> get props => [];
 }
+
+class LogoutSubmitted extends LoginState {
+  const LogoutSubmitted();
+  @override
+  List<Object?> get props => [];
+}
+
+class LogoutSuccess extends LoginState {
+  const LogoutSuccess();
+  @override
+  List<Object?> get props => [];
+}
+
+class LogoutFailed extends LoginState {
+  const LogoutFailed();
+  @override
+  List<Object?> get props => [];
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/strings.dart';
+import 'profile_action.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -25,22 +26,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               .textTheme
               .headline4
               ?.copyWith(color: Colors.black)),
-      actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 20, top: 7),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            //For Dark Color
-            color: Color(0xFFB8E7FB),
-          ),
-          child: IconButton(
-              onPressed: () {},
-              icon: Image(
-                  width: 20,
-                  height: 20,
-                  image: AssetImage('lib/assets/images/shared/user.png'))),
-        )
-      ],
+      actions: [ProfileAction()],
     );
   }
 

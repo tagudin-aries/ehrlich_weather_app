@@ -1,14 +1,17 @@
 import 'package:auth0_flutter/auth0_flutter.dart';
-import 'package:flutter/foundation.dart';
 
 class UserProvider {
   final Auth0 auth0Config;
   UserProvider(this.auth0Config);
 
   Future<Credentials> sendLoginRequest() async {
-    final credentials =
-        await auth0Config.webAuthentication(scheme: 'app').login();
+    return auth0Config
+        .webAuthentication(scheme: 'app')
+        .login()
+        .then((value) => value);
+  }
 
-    return credentials;
+  Future<void> sendLogoutRequest() async {
+    return auth0Config.webAuthentication(scheme: 'app').logout();
   }
 }

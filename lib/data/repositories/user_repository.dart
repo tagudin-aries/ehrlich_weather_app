@@ -5,6 +5,7 @@ import '../data_providers/user_provider.dart';
 
 abstract class IUserRepository {
   Future<Credentials> login();
+  Future<void> logout();
 }
 
 class UserRepository implements IUserRepository {
@@ -18,5 +19,10 @@ class UserRepository implements IUserRepository {
   @override
   Future<Credentials> login() {
     return userProvider.sendLoginRequest();
+  }
+
+  @override
+  Future<void> logout() {
+    return userProvider.sendLogoutRequest();
   }
 }

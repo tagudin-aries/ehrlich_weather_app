@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:weather_wise_app/logic/cubit/session/session_cubit.dart';
 import 'core/constants/strings.dart';
 import 'core/themes/app_theme.dart';
 import 'data/repositories/user_repository.dart';
@@ -42,6 +43,9 @@ class App extends StatelessWidget {
           BlocProvider(
             create: (ctx) =>
                 WeatherBloc(RepositoryProvider.of<WeatherRepository>(ctx)),
+          ),
+          BlocProvider(
+            create: (ctx) => SessionCubit(),
           ),
         ],
         child: weatherApp(),
