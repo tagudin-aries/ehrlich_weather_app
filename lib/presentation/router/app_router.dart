@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../../core/exceptions/route_exception.dart';
+import '../screens/home_screen/home_screen.dart';
 import '../screens/onboarding_screen/on_boarding_screen.dart';
 import '../screens/welcome_screen/welcome_screen.dart';
 
@@ -20,6 +21,10 @@ class AppRouter {
       case WelcomeScreen.routeName:
         return PageTransition(
             type: PageTransitionType.bottomToTop, child: const WelcomeScreen());
+
+      case HomeScreen.routeName:
+        return PageTransition(
+            type: PageTransitionType.bottomToTop, child: HomeScreen());
 
       default:
         throw const RouteException('Route not found!');

@@ -5,7 +5,9 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'core/constants/strings.dart';
 import 'core/themes/app_theme.dart';
 import 'data/repositories/user_repository.dart';
+import 'data/repositories/weather_repository.dart';
 import 'logic/bloc/login/login_bloc.dart';
+import 'logic/bloc/weather/weather_bloc.dart';
 import 'logic/cubit/onboarding/onboarding_cubit.dart';
 import 'logic/debug/app_bloc_observer.dart';
 import 'presentation/router/app_router.dart';
@@ -24,6 +26,9 @@ class App extends StatelessWidget {
         RepositoryProvider(
           create: (context) => UserRepository(),
         ),
+        RepositoryProvider(
+          create: (context) => WeatherRepository(),
+        )
       ],
       child: MultiBlocProvider(
         providers: [
@@ -33,6 +38,10 @@ class App extends StatelessWidget {
           BlocProvider(
             create: (ctx) =>
                 LoginBloc(RepositoryProvider.of<UserRepository>(ctx)),
+          ),
+          BlocProvider(
+            create: (ctx) =>
+                WeatherBloc(RepositoryProvider.of<WeatherRepository>(ctx)),
           ),
         ],
         child: weatherApp(),

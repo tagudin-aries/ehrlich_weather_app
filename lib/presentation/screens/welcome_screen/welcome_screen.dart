@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/themes/defaults.dart';
 import '../../../logic/bloc/login/login_bloc.dart';
 import '../../shared/popups/custom_popup.dart';
+import '../home_screen/home_screen.dart';
 import 'widgets/content.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -28,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
               type: CoolAlertType.error);
         } else {
           //login success, navigate to home
-          // Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+          Navigator.pushReplacementNamed(context, HomeScreen.routeName);
         }
       },
       child: Scaffold(
